@@ -41,4 +41,21 @@ class FactorialsTest {
 
   }
 
+  @Test
+  void computeIterative() {
+    for (long[] testCase : testCases) {
+      // for (int n = 0; i < params.length; i++) {
+      int n = (int) testCase[0];
+      //
+      //int n = params[i];
+      //long expected = expecteds[i];
+     BigInteger expected = BigInteger.valueOf(testCase[1]);
+     BigInteger actual = Factorials.computeIterative(n);
+      assertEquals(expected, actual);
+    }
+
+    assertThrows(IllegalArgumentException.class, () -> Factorials.computeIterative(-1));
+
+  }
+
 }
