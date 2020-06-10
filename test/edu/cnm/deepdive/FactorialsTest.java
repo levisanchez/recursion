@@ -2,6 +2,7 @@ package edu.cnm.deepdive;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.math.BigInteger;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
@@ -25,13 +26,14 @@ class FactorialsTest {
 
   @Test
   void computeRecursive() {
-//    for (long[] testCase : testCases) {
-    for (int i = 0; i < params.length; i++) {
-//      int n = (int) testCase[0];
-//      long expected = testCase[1];
-      int n = params[i];
-      long expected = expecteds[i];
-      long actual = Factorials.computeRecursive(n);
+    for (long[] testCase : testCases) {
+   // for (int n = 0; i < params.length; i++) {
+      int n = (int) testCase[0];
+   //
+   //   int n = params[i];
+      //  long expected = expecteds[i];
+      BigInteger expected = BigInteger.valueOf(testCase[1]);
+      BigInteger actual = Factorials.computeRecursive(n);
       assertEquals(expected, actual);
     }
 
