@@ -22,9 +22,10 @@ public class Palindromes {
     );
   }
 
-  public static boolean testDenormalized(String inputTwo) {
+  public static boolean testDenormalized(String input) {
 
-    String inputThree = (inputTwo.replaceAll("[\\W_]+", ""));
+    String inputTwo = (input.replaceAll("[\\W_]+", ""));
+    String inputThree = inputTwo.toLowerCase();
 
   //public static boolean testRecursive(String input) {
 //    boolean isPalindrome = false;
